@@ -67,7 +67,7 @@ export default {
 }
 .name {
 	margin-left: 100px;
-	font-family: roboto-medium;
+	font-family: $roboto-medium;
 }
 .menu {
 	@include transparent-button;
@@ -77,5 +77,12 @@ export default {
 	margin-right: 30px;
 	margin-left: auto;
 	width: 60%;
+}
+
+@include for-big-desktop-up {
+	.menu,
+	.name {
+		font-size: 30px;
+	}
 }
 </style>

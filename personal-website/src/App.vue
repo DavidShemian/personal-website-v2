@@ -2,16 +2,22 @@
 	<div id="app">
 		<NavBarVue />
 		<WelcomePageVue />
+		<AboutMobileVue />
 	</div>
 </template>
 
 <script>
 import NavBarVue from './pages/NavBar.vue';
 import WelcomePageVue from './pages/WelcomePage';
-
+import AboutMobileVue from './pages/AboutMobile.vue';
+// import AboutVue from './pages/About.vue';
 export default {
 	name: 'App',
-	components: { NavBarVue, WelcomePageVue },
+	components: {
+		NavBarVue,
+		WelcomePageVue,
+		AboutMobileVue,
+	},
 };
 </script>
 
@@ -22,6 +28,6 @@ export default {
 #app {
 	display: flex;
 	flex-direction: column;
-	font-family: roboto-light;
+	font-family: $roboto-light;
 }
 </style>

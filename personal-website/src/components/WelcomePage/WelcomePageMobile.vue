@@ -74,12 +74,12 @@ export default {
 
 .name {
 	font-size: 35px;
-	font-family: roboto-black;
+	font-family: $roboto-black;
 }
 
 .under-name {
 	font-size: 20px;
 	color: $LightBlue;
-	font-family: roboto-bold;
+	font-family: $roboto-bold;
 }
 </style>

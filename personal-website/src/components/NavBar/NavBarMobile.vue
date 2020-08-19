@@ -111,7 +111,7 @@ export default {
 }
 
 .name {
-	font-family: roboto-medium;
+	font-family: $roboto-medium;
 }
 
 .menu {

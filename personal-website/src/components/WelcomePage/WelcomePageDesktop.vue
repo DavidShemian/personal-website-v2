@@ -75,13 +75,13 @@ export default {
 
 .name {
 	font-size: 90px;
-	font-family: roboto-black;
+	font-family: $roboto-black;
 }
 
 .under-name {
 	font-size: 40px;
 	color: $LightBlue;
-	font-family: roboto-bold;
+	font-family: $roboto-bold;
 }
 
 .vertical {
@@ -92,10 +92,11 @@ export default {
 	margin-left: 20px;
 	.line {
 		border-left: 1px solid;
-		height: 100px;
+		height: 150px;
 		margin-top: 10px;
 	}
 	.email {
+		font-size: 20px;
 		writing-mode: vertical-rl;
 		text-orientation: mixed;
 	}
@@ -111,17 +112,14 @@ export default {
 	.under-name {
 		font-size: 60px;
 	}
-}
-
-@include for-desktop-up {
-	.above-name {
-		font-size: 40px;
-	}
-	.name {
-		font-size: 100px;
-	}
-	.under-name {
-		font-size: 60px;
+	.vertical {
+		.email {
+			font-size: 25px;
+		}
+		.line {
+			border-left: 2px solid;
+			height: 200px;
+		}
 	}
 }
 
@@ -134,6 +132,15 @@ export default {
 	}
 	.under-name {
 		font-size: 30px;
+	}
+	.vertical {
+		.email {
+			font-size: 15px;
+		}
+		.line {
+			border-left: 1px solid;
+			height: 100px;
+		}
 	}
 }
 </style>
