@@ -1,23 +1,24 @@
 <template>
-	<div class="container" v-bind:class="textCssBind(getIsLightMode)">
+	<div class="container" v-bind:class="{ ...textCssBind(getIsLightMode), ...backgroundCssBindOdd(getIsLightMode), 'box-shadow': !getIsWindowTop }">
 		<span class="name">
 			DAVIDSHEMIAN
 		</span>
 		<div class="menu">
+			<LangMenuVue />
 			<button>
-				ABOUT
+				{{ $t('menu_about') }}
 			</button>
 			<button>
-				EXPERIENCE
+				{{ $t('menu_experience') }}
 			</button>
 			<button>
-				SKILLS
+				{{ $t('menu_skills') }}
 			</button>
 			<button>
-				CONTACT
+				{{ $t('menu_contact') }}
 			</button>
 			<button>
-				RESUME
+				{{ $t('menu_resume') }}
 			</button>
 			<toggle-button
 				:value="getIsLightMode"
@@ -32,11 +33,15 @@
 </template>
 
 <script>
-import { textCssBind } from '../../common/cssBindings';
-
+import { textCssBind, backgroundCssBindOdd } from '../../common/cssBindings';
+import LangMenuVue from './LangMenu.vue';
 export default {
+	components: {
+		LangMenuVue,
+	},
 	created() {
 		this.textCssBind = textCssBind;
+		this.backgroundCssBindOdd = backgroundCssBindOdd;
 	},
 	methods: {
 		toggleViweMode({ value }) {
@@ -47,13 +52,16 @@ export default {
 		getIsLightMode() {
 			return this.$store.getters.getIsLightMode;
 		},
+		getIsWindowTop() {
+			console.log('getIsWindowTop -> this.$store.getters.getIsWindowTop', this.$store.getters.getIsWindowTop);
+			return this.$store.getters.getIsWindowTop;
+		},
 	},
 };
 </script>
 
 <style scoped lang="scss">
 @import '../../common/variables.scss';
-
 .container {
 	display: flex;
 	align-items: center;
@@ -63,8 +71,12 @@ export default {
 	height: 10vh;
 	position: fixed;
 	z-index: 999;
-	background: rgba(0, 0, 0, 0);
 }
+
+.box-shadow {
+	box-shadow: 0px 1px 1px #787878;
+}
+
 .name {
 	margin-left: 100px;
 	font-family: $roboto-medium;

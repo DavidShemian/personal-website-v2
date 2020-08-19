@@ -1,16 +1,16 @@
 <template>
 	<div class="page" v-bind:class="backgroundCssBindOdd(getIsLightMode)">
 		<div class="container">
-			<img src="../../assets/images/welcome-page-dark-illustration.png" v-bind:class="{ 'invert-image': !getIsLightMode }" />
-			<div class="text">
+			<img src="../../assets/images/welcome-page-dark-illustration.png" v-bind:class="invertImageBind(getIsLightMode)" />
+			<div class="text" v-bind:class="{ ...textCssBind(getIsLightMode), ...rightToLeftBind(getIsRightToLeft) }">
 				<p class="above-name">
-					HI! I AM
+					{{ $t('welcome_page_above_name') }}
 				</p>
 				<p class="name" v-bind:class="textCssBind(getIsLightMode)">
-					David Shemian
+					{{ $t('welcome_page_name') }}
 				</p>
 				<p class="under-name">
-					FULL STACK DEVELOPER
+					{{ $t('welcome_page_under_name') }}
 				</p>
 			</div>
 			<div class="vertical" v-bind:class="textCssBind(getIsLightMode)">
@@ -22,17 +22,22 @@
 </template>
 
 <script>
-import { backgroundCssBindOdd, textCssBind } from '../../common/cssBindings';
+import { backgroundCssBindOdd, textCssBind, invertImageBind, rightToLeftBind } from '../../common/cssBindings';
 
 export default {
 	name: 'WelcomePage',
 	created() {
 		this.backgroundCssBindOdd = backgroundCssBindOdd;
 		this.textCssBind = textCssBind;
+		this.invertImageBind = invertImageBind;
+		this.rightToLeftBind = rightToLeftBind;
 	},
 	computed: {
 		getIsLightMode() {
 			return this.$store.getters.getIsLightMode;
+		},
+		getIsRightToLeft() {
+			return this.$store.getters.getIsRightToLeft;
 		},
 	},
 };
@@ -55,11 +60,6 @@ export default {
 	justify-content: flex-end;
 	width: 90%;
 	margin-top: 50px;
-}
-
-.invert-image {
-	-webkit-filter: invert(1);
-	filter: invert(1);
 }
 
 .text {

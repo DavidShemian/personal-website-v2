@@ -2,21 +2,21 @@
 	<div id="app">
 		<NavBarVue />
 		<WelcomePageVue />
-		<AboutMobileVue />
+		<AboutVue />
 	</div>
 </template>
 
 <script>
 import NavBarVue from './pages/NavBar.vue';
 import WelcomePageVue from './pages/WelcomePage';
-import AboutMobileVue from './pages/AboutMobile.vue';
-// import AboutVue from './pages/About.vue';
+import AboutVue from './pages/About.vue';
+
 export default {
 	name: 'App',
 	components: {
 		NavBarVue,
 		WelcomePageVue,
-		AboutMobileVue,
+		AboutVue,
 	},
 };
 </script>

@@ -3,7 +3,7 @@
 		<div
 			v-if="!isMenuOpen"
 			class="header"
-			v-bind:class="{ ...textCssBind(getIsLightMode), ...backgroundCssBindOdd(getIsLightMode), 'box-shadow': !isWindowTop }"
+			v-bind:class="{ ...textCssBind(getIsLightMode), ...backgroundCssBindOdd(getIsLightMode), 'box-shadow': !getIsWindowTop }"
 		>
 			<div class="burger-container" v-on:click="changeBurgerButton">
 				<img src="../../assets/images/menu.png" />
@@ -49,7 +49,6 @@ export default {
 	data() {
 		return {
 			isMenuOpen: false,
-			isWindowTop: true,
 		};
 	},
 	methods: {
@@ -59,20 +58,14 @@ export default {
 		toggleViweMode() {
 			this.$store.dispatch('toggleViewMode', !this.getIsLightMode);
 		},
-		onScroll() {
-			this.isWindowTop = window.top.scrollY === 0;
-		},
 	},
 	computed: {
 		getIsLightMode() {
 			return this.$store.getters.getIsLightMode;
 		},
-	},
-	mounted() {
-		window.addEventListener('scroll', this.onScroll);
-	},
-	beforeDestroy() {
-		window.removeEventListener('scroll', this.onScroll);
+		getIsWindowTop() {
+			return this.$store.getters.getIsWindowTop;
+		},
 	},
 };
 </script>

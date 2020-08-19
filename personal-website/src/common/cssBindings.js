@@ -18,3 +18,15 @@ export const textCssBind = (getIsLightMode) => {
 		'light-text': !getIsLightMode,
 	};
 };
+
+export const invertImageBind = (isLightMode) => {
+	return {
+		'invert-image': !isLightMode,
+	};
+};
+
+export const rightToLeftBind = (isRightToLeft) => {
+	return {
+		'right-to-left': isRightToLeft,
+	};
+};
