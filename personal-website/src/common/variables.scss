@@ -1,0 +1,103 @@
+$default-font: sans-serif;
+$roboto-black: roboto-black $default-font;
+$roboto-light: roboto-light $default-font;
+$roboto-bold: roboto-bold $default-font;
+$roboto-medium: roboto-medium $default-font;
+
+$Lynx: #191919;
+$Grey: #232323;
+$White: #f7f7f7;
+$Blue: #516ee1;
+$LightBlue: #6a98f0;
+
+// smartphones
+$screen-sm: 414px;
+
+// Small tablets (portrait view)
+$screen-md: 768px;
+
+// Tablets and small desktops
+$screen-lg: 992px;
+
+// Large tablets and desktops
+$screen-xl: 1200px;
+
+.background-change-animation {
+	-webkit-transition: background-color 300ms linear;
+	-ms-transition: background-color 300ms linear;
+	transition: background-color 300ms linear;
+}
+
+@mixin for-phone-only {
+	@media (max-width: 400px) {
+		@content;
+	}
+}
+
+@mixin for-tablet-landscape-up {
+	@media (max-width: 900px) {
+		@content;
+	}
+}
+
+@mixin for-desktop-up {
+	@media screen and (max-width: 1400px) {
+		@content;
+	}
+}
+
+@mixin for-big-desktop-up {
+	@media screen and (max-width: 1900px) {
+		@content;
+	}
+}
+
+.light-background {
+	@extend .background-change-animation;
+	background-color: $White;
+}
+
+.dark-background {
+	@extend .background-change-animation;
+	background-color: $Lynx;
+}
+
+.light-background {
+	@extend .background-change-animation;
+	background-color: $White;
+}
+
+.grey-background {
+	@extend .background-change-animation;
+	background-color: $Grey;
+}
+
+.blue-background {
+	@extend .background-change-animation;
+	background-color: $Blue;
+}
+
+.light-text {
+	color: $White;
+	button {
+		color: $White;
+	}
+}
+
+.dark-text {
+	color: $Lynx;
+	button {
+		color: $Lynx;
+	}
+}
+
+@mixin transparent-button {
+	button {
+		background-color: Transparent;
+		background-repeat: no-repeat;
+		border: none;
+		cursor: pointer;
+		overflow: hidden;
+		outline: none;
+	}
+}
