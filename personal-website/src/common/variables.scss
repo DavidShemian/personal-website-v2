@@ -39,13 +39,13 @@ $screen-xl: 1200px;
 }
 
 @mixin for-phone-only {
-	@media (max-width: 399px) {
+	@media (max-width: 700px) {
 		@content;
 	}
 }
 
 @mixin for-tablet-landscape-up {
-	@media screen and (max-width: 900px) and (min-width: 400px) {
+	@media screen and (max-width: 900px) and (min-width: 701px) {
 		@content;
 	}
 }

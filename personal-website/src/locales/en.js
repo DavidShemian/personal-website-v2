@@ -13,6 +13,7 @@ const en_messages = {
         This is why I believe that the most important skill a software developer can have today is the ability to learn new things quickly and efficiently.
         I make sure to stay updated with all the new stuff that get released and experience as much and I can.
         My goal is to learn at least one new thing every day.`,
+	experience_title: 'EXPERIENCE',
 };
 
 export default en_messages;

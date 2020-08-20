@@ -3,6 +3,7 @@
 		<NavBarVue />
 		<WelcomePageVue />
 		<AboutVue />
+		<ExperienceDekstopVue />
 	</div>
 </template>
 
@@ -10,6 +11,7 @@
 import NavBarVue from './pages/NavBar.vue';
 import WelcomePageVue from './pages/WelcomePage';
 import AboutVue from './pages/About.vue';
+import ExperienceDekstopVue from './components/Experience/ExperienceDekstop.vue';
 
 export default {
 	name: 'App',
@@ -17,6 +19,7 @@ export default {
 		NavBarVue,
 		WelcomePageVue,
 		AboutVue,
+		ExperienceDekstopVue,
 	},
 };
 </script>

@@ -6,7 +6,7 @@
 			v-bind:class="{ ...textCssBind(getIsLightMode), ...backgroundCssBindOdd(getIsLightMode), 'box-shadow': !getIsWindowTop }"
 		>
 			<div class="burger-container" v-on:click="changeBurgerButton">
-				<img src="../../assets/images/menu.png" />
+				<img v-bind:class="invertImageBind(getIsLightMode)" src="../../assets/images/menu.png" />
 			</div>
 			<div class="name">DAVIDSHEMIAN</div>
 			<div class="hidden-for-centering"></div>
@@ -38,13 +38,14 @@
 </template>
 
 <script>
-import { textCssBind, backgroundCssBindOdd, backgroundCssBindEven } from '../../common/cssBindings';
+import { textCssBind, backgroundCssBindOdd, backgroundCssBindEven, invertImageBind } from '../../common/cssBindings';
 
 export default {
 	created() {
 		this.textCssBind = textCssBind;
 		this.backgroundCssBindOdd = backgroundCssBindOdd;
 		this.backgroundCssBindEven = backgroundCssBindEven;
+		this.invertImageBind = invertImageBind;
 	},
 	data() {
 		return {
