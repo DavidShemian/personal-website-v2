@@ -28,7 +28,6 @@ export default new Vuex.Store({
 		},
 		onScroll() {
 			this.isWindowTop = window.top.scrollY === 0;
-			console.log('onScroll -> this.isWindowTop', this.isWindowTop);
 		},
 	},
 	getters: {
@@ -43,7 +42,6 @@ export default new Vuex.Store({
 		},
 	},
 	mounted() {
-		console.log('mounted -> 12312', 12312);
 		window.addEventListener('scroll', this.onScroll);
 	},
 	beforeDestroy() {

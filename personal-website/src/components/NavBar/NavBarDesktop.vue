@@ -53,7 +53,6 @@ export default {
 			return this.$store.getters.getIsLightMode;
 		},
 		getIsWindowTop() {
-			console.log('getIsWindowTop -> this.$store.getters.getIsWindowTop', this.$store.getters.getIsWindowTop);
 			return this.$store.getters.getIsWindowTop;
 		},
 	},

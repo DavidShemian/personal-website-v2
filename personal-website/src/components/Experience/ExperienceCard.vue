@@ -14,8 +14,8 @@
 					{{ position }}
 				</p>
 				<p class="company">{{ company }}</p>
-				<img v-if="!isOpen" v-on:click="openCard" src="../../assets/images/play-button.png" />
-				<img v-if="isOpen" v-on:click="closeCard" src="../../assets/images/play-button-full.png" />
+				<img v-if="!isOpen" v-on:click="openCard" src="../../assets/images/play-button-empty.png" />
+				<img v-if="isOpen" v-on:click="closeCard" src="../../assets/images/play-button-full.png" class="open-card-play-button" />
 			</div>
 			<div v-if="isOpen" class="extended">
 				<div class="description">
@@ -38,7 +38,7 @@
 import { backgroundCssBindEven, textCssBind } from '../../common/cssBindings';
 
 export default {
-	name: 'ExperienceDesktopCard',
+	name: 'ExperienceCard',
 	data() {
 		return {
 			isOpen: false,
@@ -107,6 +107,9 @@ export default {
 		}
 		.company {
 			color: $Blue;
+		}
+		.open-card-play-button {
+			transform: rotate(90deg);
 		}
 	}
 

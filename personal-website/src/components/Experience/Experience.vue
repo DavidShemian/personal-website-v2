@@ -3,7 +3,7 @@
 		<div class="cards">
 			<h1 class="title" v-bind:class="textCssBind(getIsLightMode)">{{ $t('experience_title') }}</h1>
 			<div v-for="(experience, index) in experienceData" v-bind:key="index">
-				<ExperienceDekstopCardVue
+				<ExperienceCardVue
 					:position="experience.position"
 					:company="experience.company"
 					:dates="experience.dates"
@@ -17,18 +17,18 @@
 
 <script>
 import { backgroundCssBindOdd, textCssBind } from '../../common/cssBindings';
-import ExperienceDekstopCardVue from './ExperienceDekstopCard.vue';
+import ExperienceCardVue from './ExperienceCard.vue';
 import { experienceData } from './ExperienceData';
 
 export default {
-	name: 'ExperienceDesktop',
+	name: 'Experience',
 	data() {
 		return {
 			experienceData,
 		};
 	},
 	components: {
-		ExperienceDekstopCardVue,
+		ExperienceCardVue,
 	},
 	created() {
 		this.backgroundCssBindOdd = backgroundCssBindOdd;
